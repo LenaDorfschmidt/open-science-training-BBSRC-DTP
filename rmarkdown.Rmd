@@ -294,7 +294,7 @@ Don't want people to see your code? Remember to add `echo = F`. Find the output 
 # External Image
 ***
 
-Sometimes you may want to include an external image. I have added an image you could load in here to the `img` folder. 
+Sometimes you may want to include an external image. I have added an image you could load in here to [moodle](https://www.vle.cam.ac.uk/mod/folder/view.php?id=14937342). 
 
 You can  include the image by adding an image title and the path to your image as such: `![alt text or image title](path/to/image)`. Note that you can control the size of the image included by adding a scaling factor, i.e. `![Reproducibility Table](img/reproducible-table.png){width=50%}`.
 
