@@ -57,7 +57,7 @@ This is some sample text. This is some sample text. This is some sample text. Th
 
 Plotting the data:
 
-```{r eval = F}
+```{r}
 library(ggplot2)
 ggplot(questionnaire, aes(x=crisis_agree, fill = crisis_agree))+
   geom_bar(aes(y = (..count..)/sum(..count..)))+
