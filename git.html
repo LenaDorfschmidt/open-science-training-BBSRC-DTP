@@ -638,11 +638,33 @@ git config --global user.email &#39;your@emailaddress.com&#39;</code></pre>
 <h3 number="7.1.1"><span class="header-section-number">7.1.1</span> …from an existing R project</h3>
 <p>If you have the usethis package, call <code>usethis::use_git()</code>.</p>
 <p><img src="img/use_this.png" style="width:60.0%" /> <br/><br/></p>
-<p>Alternatively, in RStudio, go to ‘Tools &gt; Project Options … &gt; Git/SVN’. Under ‘Version control system’, select ‘Git’. Confirm New Git Repository? Yes!</p>
+<p>Alternatively, in RStudio, go to <code>Tools &gt; Project Options … &gt; Git/SVN</code>. Under <code>Version control system</code>, select <code>Git</code>. Confirm New Git Repository? Yes!</p>
 <p><img src="img/repo_within_rstudio.png" style="width:60.0%" /></p>
 </div>
 <div id="from-a-new-r-project" class="section level3" number="7.1.2">
 <h3 number="7.1.2"><span class="header-section-number">7.1.2</span> …from a new R project</h3>
+<p>Setting up a new repository from within R Studio isn’t super smooth, but it works.</p>
+<p>Here is what to do:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new R Project, by clicking on <code>File - New Project</code></li>
+<li>Choose <code>New Project</code>, then tick the box that says <code>Version Control</code>:</li>
+</ol>
+<p><br/> <br/> <br/></p>
+<p><img src="img/newrepo_setup.png" style="width:40.0%" /> <br/><br/> <br/> <br/></p>
+<p>This will create a new R Project, which includes a <code>.gitignore</code> and an <code>.Rproj</code> file.</p>
+<p><img src="img/newrepo_files.png" style="width:40.0%" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Commit the files. The files that were created in the setup of the project need to be committed as usual.</li>
+</ol>
+<p><img src="img/newrepo_commit.png" style="width:40.0%" /> <br/> <br/></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Now we need to link this project to a git repository on GitHub. There isn’t really a very elegant way to do so. What we’ll do is: Login to GitHub and create a new repository (as you learned above). Name this repository exactly as you names your new R Project. This time, do <em>not</em> tick the ‘Create README’ box.</p></li>
+<li><p>Now tell R Studio to add the local repository to the remote on by typing the following into the console in R Studio, replacing <code>UserName</code> with your GitHub username and <code>NewProject</code> with the new R Projects name.</p></li>
+</ol>
+<p><code>git remote add origin https://github.com/UserName/NewProject.git</code></p>
+<p>Next past the following to push the local changes to the remote.</p>
+<p><code>git push -u origin master</code></p>
+<p>This should have done the job!</p>
 <p><br/></p>
 </div>
 </div>
@@ -653,16 +675,16 @@ git config --global user.email &#39;your@emailaddress.com&#39;</code></pre>
 <li>Click on the ‘History’ icon:</li>
 </ol>
 <p><br/></p>
-<p><img src="img/History_icon.png" style="width:40.0%" /></p>
+<p><img src="img/History_icon.png" style="width:30.0%" /></p>
 <p><br/> <br/></p>
 <p>A new window will appear with a list of the changes committed in the past</p>
-<p><br/> <img src="img/whole_history.png" style="width:80.0%" /></p>
+<p><br/> <img src="img/whole_history.png" style="width:70.0%" /></p>
 <p><br/></p>
 <p>Choose the pre-edited version (Red arrow. Note:the bottom panel shows the changes happened in that given commit)</p>
 <p><br/></p>
 <p>Click on ‘view file’ (Black arrow)</p>
 <p><br/></p>
-<p>The pre-edited file will show up and can be saved in your local directory. <img src="img/Oldfile.png" style="width:80.0%" /></p>
+<p>The pre-edited file will show up and can be saved in your local directory. <img src="img/Oldfile.png" style="width:70.0%" /></p>
 <p><br /></p>
 <div class="taskbox">
 <div class="taskbox-title">

@@ -367,13 +367,51 @@ If you have the usethis package, call `usethis::use_git()`.
 ![](img/use_this.png){width=60%}
 <br/><br/>
 
-Alternatively, in RStudio, go to 'Tools > Project Options … > Git/SVN'. Under 'Version control system', select 'Git'. Confirm New Git Repository? Yes!
+Alternatively, in RStudio, go to `Tools > Project Options … > Git/SVN`. Under `Version control system`, select `Git`. Confirm New Git Repository? Yes!
 
 ![](img/repo_within_rstudio.png){width=60%}
 
 ### ...from a new R project
 
+Setting up a new repository from within R Studio isn't super smooth, but it works. 
 
+Here is what to do:
+
+1. Create a new R Project, by clicking on `File - New Project`
+2. Choose `New Project`, then tick the box that says `Version Control`:
+
+<br/> <br/> <br/>
+
+
+
+![](img/newrepo_setup.png){width=40%}
+<br/><br/>
+<br/>
+<br/>
+
+ 
+  This will create a new R Project, which includes a `.gitignore` and an `.Rproj` file.
+
+![](img/newrepo_files.png){width=40%}
+
+3. Commit the files. The files that were created in the setup of the project need to be committed as usual. 
+
+![](img/newrepo_commit.png){width=40%}
+<br/>
+<br/>
+
+
+4. Now we need to link this project to a git repository on GitHub. There isn't really a very elegant way to do so. What we'll do is: Login to GitHub and create a new repository (as you learned above). Name this repository exactly as you names your new R Project. This time, do *not* tick the 'Create README' box.
+
+5. Now tell R Studio to add the local repository to the remote on by typing the following into the console in R Studio, replacing `UserName` with your GitHub username and `NewProject` with the new R Projects name. 
+
+  `git remote add origin https://github.com/UserName/NewProject.git`
+
+  Next past the following to push the local changes to the remote.  
+
+  `git push -u origin master`
+
+  This should have done the job!
 
 <br/>
 
@@ -386,7 +424,7 @@ One of the advantages of version control, is that it allows to trace back your m
  
  <br/>
  
- ![](img/History_icon.png){width=40%}
+ ![](img/History_icon.png){width=30%}
 
 <br/> <br/>
 
@@ -394,7 +432,7 @@ One of the advantages of version control, is that it allows to trace back your m
 A new window will appear with a list of the changes committed in the past
 
 <br/>
- ![](img/whole_history.png){width=80%}
+ ![](img/whole_history.png){width=70%}
 
 <br/>
 
@@ -409,7 +447,7 @@ Click on 'view file' (Black arrow)
 
 
 The pre-edited file will show up and can be saved in your local directory.
-![](img/oldfile.png){width=80%}
+![](img/oldfile.png){width=70%}
 
 
 <br />
